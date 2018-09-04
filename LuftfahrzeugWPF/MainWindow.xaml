@@ -1,0 +1,28 @@
+﻿<Window x:Class="LuftfahrzeugWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LuftfahrzeugWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="437.98" Width="597.599" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="483.2"/>
+            <ColumnDefinition Width="116.8"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid x:Name="FahrzeugGrid" ItemsSource= "{Binding Path= Luftfahrzeuge}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="400" Margin="0,7,0,-7" VerticalAlignment="Top" Width="416" Grid.Row="0" Grid.Column="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path= Hersteller}" Width="120" ClipboardContentBinding="{x:Null}" Header="Hersteller"/>
+                <DataGridTextColumn Binding="{Binding Path= Baujahr}" Width="120"  ClipboardContentBinding="{x:Null}" Header="Baujahr"/>
+                <DataGridTextColumn Binding="{Binding Path= Power.Name}" Width="120*"  ClipboardContentBinding="{x:Null}" Header="Motorname"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Bottom">
+            <Button x:Name="Butchange" Content="Ändern" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="19" Click="Butchange_Click"/>
+            <Button x:Name="Butadd" Content="Hinfügen" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Top" Width="75" Height="19" Grid.Column="1" Click="Butadd_Click"/>
+            <Button x:Name="Butdelete" Content="Löschen" HorizontalAlignment="Stretch" Margin="5" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="19" Click="Butdelete_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

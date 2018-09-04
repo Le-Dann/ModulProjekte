@@ -1,0 +1,26 @@
+﻿<Window x:Class="LuftfahrzeugWPF.NeueLuftfahrzeug"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LuftfahrzeugWPF"
+        mc:Ignorable="d"
+        Title="NeueLuftfahrzeug" Height="331" Width="560" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
+    <Grid>
+        <Label x:Name="Labfahrtyp" Content="Fahrzeugtyp:" HorizontalAlignment="Left" Margin="0,30,0,0" VerticalAlignment="Top"  Height="27" Width="85"/>
+        <Label x:Name="Labhersteller" Content="Hersteller:" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top"  Height="27" Width="85"/>
+        <Label x:Name="Labbaujahr" Content="Baujahr:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"  Height="27" Width="85"/>
+        <Label x:Name="Labmotorname" Content="Name Motor:" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top"  Height="27" Width="85"/>
+        <ComboBox x:Name="comboxfahrtyp" HorizontalAlignment="Left" Margin="100,30,0,0" VerticalAlignment="Top" Width="444" Height="27">
+            <Button Content="Flugzeug" Background="White"/>
+            <Button Content="Zeppelin" Background="White"/>
+            <Button Content="Hubschrauber" Background="White"/>
+        </ComboBox>
+        <TextBox x:Name="Tbhersteller"  HorizontalAlignment="Left" Height="27" Margin="100,75,0,0" TextWrapping="Wrap" Text="{Binding Path=Hersteller}" VerticalAlignment="Top" Width="444"/>
+        <TextBox x:Name="Tbbaujahr" HorizontalAlignment="Left" Height="27" Margin="100,120,0,0" TextWrapping="Wrap" Text="{Binding Path=Baujahr}" VerticalAlignment="Top" Width="444"/>
+        <TextBox x:Name="Tbmotor" HorizontalAlignment="Left" Height="27" Margin="100,166,0,0" TextWrapping="Wrap" Text="{Binding Path=Power.Name}" VerticalAlignment="Top" Width="444"/>
+        <Button x:Name="ButOK" Content="OK" HorizontalAlignment="Left" Margin="349,256,0,0" VerticalAlignment="Top" Width="75" Click="ButOK_Click"/>
+        <Button x:Name="Butcancel" Content="Abbrechen" HorizontalAlignment="Left" Margin="445,256,0,0" VerticalAlignment="Top" Width="75" Click="Butcancel_Click"/>
+
+    </Grid>
+</Window>
