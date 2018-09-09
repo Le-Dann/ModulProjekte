@@ -25,6 +25,8 @@ namespace BankomatWPF
         /// List of accounts to be stored in data grid
         /// </summary>
         private List<Konto> kontos = new List<Konto>();
+        Sparkonto sparkonto = new Sparkonto();
+        Girokonto girokonto = new Girokonto();
 
         public List<Konto>  Kontos
         {
@@ -45,8 +47,6 @@ namespace BankomatWPF
         /// <param name="e"></param>
         private void ButAdd_Click(object sender, RoutedEventArgs e)
         {
-            Sparkonto sparkonto = new Sparkonto();
-            Girokonto girokonto = new Girokonto();
             AccountWindow w = new AccountWindow();
 
             w.Owner = this;
@@ -63,6 +63,42 @@ namespace BankomatWPF
                 {
                     girokonto = w.girokonto;
                     Kontos.Add(girokonto);
+                }
+                DataContext = null;
+                DataContext = this;
+            }
+        }
+
+        private void Butchange_Click(object sender, RoutedEventArgs e)
+        {
+            int indexval = Gridbank.SelectedIndex;
+            sparkonto = Gridbank.SelectedItem as Sparkonto;
+            girokonto = Gridbank.SelectedItem as Girokonto;
+            AccountWindow w = new AccountWindow(sparkonto);
+            w.Owner = this;
+            if (sparkonto != null)
+            {
+                w.ShowDialog();
+            }
+            else if (girokonto != null)
+            {
+                w = new AccountWindow(girokonto);
+                w.ShowDialog();
+            }
+
+            if (w.DialogResult == true)
+            {
+                if (w.kontotyp == -1)
+                {
+                    kontos.Remove(sparkonto);
+                    sparkonto = w.sparkonto;
+                    Kontos.Insert(indexval,sparkonto);
+                }
+                else if (w.kontotyp == 1)
+                {
+                    kontos.Remove(girokonto);
+                    girokonto = w.girokonto;
+                    Kontos.Insert(indexval,girokonto);
                 }
                 DataContext = null;
                 DataContext = this;

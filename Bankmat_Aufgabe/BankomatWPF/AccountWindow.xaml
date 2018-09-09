@@ -12,7 +12,7 @@
         <Label x:Name="lbName" Content="*Name" HorizontalAlignment="Left" Margin="23,148,0,0" VerticalAlignment="Top" Height="26" Width="122"/>
         <Label x:Name="lblimit" Content="Auszahlungslimit" HorizontalAlignment="Left" Margin="23,205,0,0" VerticalAlignment="Top" Height="27" Width="126"/>
         <Button x:Name="butOK" Content="OK" HorizontalAlignment="Left" Margin="414,299,0,0" VerticalAlignment="Top" Width="59" Height="21" Click="butOK_Click" />
-        <Button x:Name="butAbbrechen" Content="Abbrechen" HorizontalAlignment="Left" Margin="496,299,0,0" VerticalAlignment="Top" Width="97" Height="21"/>
+        <Button x:Name="butAbbrechen" Content="Abbrechen" HorizontalAlignment="Left" Margin="496,299,0,0" VerticalAlignment="Top" Width="97" Height="21" Click="butAbbrechen_Click"/>
         <TextBox x:Name="tbName"  HorizontalAlignment="Left" Height="21" Margin="23,179,0,0" TextWrapping="Wrap" Text="{Binding Path= Name}" VerticalAlignment="Top" Width="417"/>
         <TextBox x:Name="tblimit"  HorizontalAlignment="Left" Height="21" Margin="23,237,0,0" TextWrapping="Wrap" Text="{Binding Path= Limit}" VerticalAlignment="Top" Width="417"/>
         <Label x:Name="lbnote" Content="* Erfolderliche Felder" HorizontalAlignment="Left" Margin="23,281,0,0" VerticalAlignment="Top" Width="153" Height="25"/>

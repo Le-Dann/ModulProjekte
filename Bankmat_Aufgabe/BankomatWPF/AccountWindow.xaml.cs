@@ -31,7 +31,7 @@ namespace BankomatWPF
         public AccountWindow()
         {
             InitializeComponent();
-            //DataContext = sparkonto; if it doesnt mess up programm use it
+            DataContext = sparkonto; 
         }
 
         public AccountWindow(Konto konto) : this ()
@@ -84,6 +84,12 @@ namespace BankomatWPF
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void butAbbrechen_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            this.Close();
         }
     }
 }

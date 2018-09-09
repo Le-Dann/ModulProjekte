@@ -13,15 +13,16 @@
         </Grid.ColumnDefinitions>
         <DataGrid HorizontalAlignment="Left" ItemsSource="{Binding Path= Kontos}" AutoGenerateColumns="False" CanUserAddRows="False" Name="Gridbank" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path= Number, Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Account no." Width="120"/>
-                <DataGridTextColumn  Binding="{Binding Path= Name, Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Name" Width="120"/>
-                <DataGridTextColumn  Binding="{Binding Path= Balance, Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Balance" Width="120"/>
-                <DataGridTextColumn  Binding="{Binding Path= Limit, Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Withdrawal Limit" Width="120*"/>
+                <DataGridTextColumn Binding="{Binding Path= Number}" ClipboardContentBinding="{x:Null}" Header="Account no." Width="160"/>
+                <DataGridTextColumn  Binding="{Binding Path= Name}" ClipboardContentBinding="{x:Null}" Header="Name" Width="160"/>
+                <DataGridTextColumn  Binding="{Binding Path= Balance, Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Name" Width="160"/>
+                <DataGridTextColumn  Binding="{Binding Path= Limit}" ClipboardContentBinding="{x:Null}" Header="Withdrawal Limit" Width="120*"/>
 
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Bottom">
-            <Button x:Name="ButAdd" Content="Neue Konto eröffnen" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Click="ButAdd_Click" Width="152" Height="20"/>
+            <Button x:Name="ButAdd" Content="Neue Konto eröffnen" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Click="ButAdd_Click" Width="168" Height="20"/>
+            <Button x:Name="Butchange" Content="Konto Information bearbeiten" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Width="168" Height="20" Click="Butchange_Click"/>
 
         </StackPanel>
     </Grid>
