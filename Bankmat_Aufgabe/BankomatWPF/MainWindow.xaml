@@ -5,21 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankomatWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="298*"/>
             <ColumnDefinition Width="99*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid HorizontalAlignment="Left" Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Width="576">
+        <DataGrid HorizontalAlignment="Left" ItemsSource="{Binding Path= Kontos}" AutoGenerateColumns="False" CanUserAddRows="False" Name="Gridbank" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top">
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Account no." Width="100"/>
-                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Name" Width="100"/>
-                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Balance" Width="100"/>
-                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Withdrawal Limit" Width="110"/>
-                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Last change date" Width="100*"/>
+                <DataGridTextColumn Binding="{Binding Path= Number, Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Account no." Width="120"/>
+                <DataGridTextColumn  Binding="{Binding Path= Name, Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Name" Width="120"/>
+                <DataGridTextColumn  Binding="{Binding Path= Balance, Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Balance" Width="120"/>
+                <DataGridTextColumn  Binding="{Binding Path= Limit, Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Withdrawal Limit" Width="120*"/>
+
             </DataGrid.Columns>
         </DataGrid>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Bottom">
+            <Button x:Name="ButAdd" Content="Neue Konto eröffnen" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Click="ButAdd_Click" Width="152" Height="20"/>
 
+        </StackPanel>
     </Grid>
 </Window>
