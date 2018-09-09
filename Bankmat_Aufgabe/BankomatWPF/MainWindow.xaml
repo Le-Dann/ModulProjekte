@@ -15,7 +15,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path= Number}" ClipboardContentBinding="{x:Null}" Header="Account no." Width="160"/>
                 <DataGridTextColumn  Binding="{Binding Path= Name}" ClipboardContentBinding="{x:Null}" Header="Name" Width="160"/>
-                <DataGridTextColumn  Binding="{Binding Path= Balance, Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Name" Width="160"/>
+                <DataGridTextColumn  Binding="{Binding Path= Balance, Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Balance" Width="160"/>
                 <DataGridTextColumn  Binding="{Binding Path= Limit}" ClipboardContentBinding="{x:Null}" Header="Withdrawal Limit" Width="120*"/>
 
             </DataGrid.Columns>

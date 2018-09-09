@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="E03.Vererbung.Buchkonto.Konto">
+    <Position X="5" Y="0.5" Width="5" />
+    <TypeIdentifier>
+      <HashCode>EAAAIACAAAAAAAAABEgAAQQBBAAAAgAAAoCAAABAAAA=</HashCode>
+      <FileName>Konto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="E03.Vererbung.Buchkonto.Sparkonto">
+    <Position X="1.5" Y="6.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sparkonto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="E03.Vererbung.Buchkonto.Girokonto">
+    <Position X="8" Y="6.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Girokonto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="E03.Vererbung.Buchkonto.KtoException">
+    <Position X="0.5" Y="2.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>KtoException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

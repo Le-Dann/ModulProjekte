@@ -31,12 +31,20 @@ namespace BankomatWPF
         public AccountWindow()
         {
             InitializeComponent();
-            DataContext = sparkonto; 
+            DataContext = sparkonto; //set text fields with default values when window is first opened
         }
 
         public AccountWindow(Konto konto) : this ()
         {
             DataContext = konto;
+            if (konto is Sparkonto)
+            {
+                cmbokontotyp.Text = "Sparkonto";
+            }
+            if (konto is Girokonto)
+            {
+                cmbokontotyp.Text = "Girokonto";
+            }
         }
 
         private void butOK_Click(object sender, RoutedEventArgs e)
