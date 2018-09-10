@@ -109,7 +109,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\School_Documents\Modul_226 Objekt_orientierte_Programmierung\M226b\E03.Vererbung.Buchkonto\E03.Vererbung.Buchkonto.csproj">
+    <ProjectReference Include="..\..\E03.Vererbung.Buchkonto\E03.Vererbung.Buchkonto.csproj">
       <Project>{b9df53cf-b953-4cf9-8f12-3d74bb6f4f1a}</Project>
       <Name>E03.Vererbung.Buchkonto</Name>
     </ProjectReference>

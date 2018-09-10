@@ -49,6 +49,7 @@ namespace BankomatWPF
 
         private void butOK_Click(object sender, RoutedEventArgs e)
         {
+            //checks if madnatory fields have been filled out
             if (String.IsNullOrEmpty(tbName.Text) || String.IsNullOrEmpty(tbAccountno.Text) || String.IsNullOrEmpty(cmbokontotyp.Text))
             {
                 MessageBox.Show("Bitte füllen Sie alle PflichtFelder ein", "Alert", MessageBoxButton.OK, MessageBoxImage.Asterisk);

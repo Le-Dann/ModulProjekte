@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankomatWPF", "BankomatWPF\BankomatWPF.csproj", "{0F328ED1-67F0-43F1-A978-97C50327F648}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E03.Vererbung.Buchkonto", "D:\School_Documents\Modul_226 Objekt_orientierte_Programmierung\M226b\E03.Vererbung.Buchkonto\E03.Vererbung.Buchkonto.csproj", "{B9DF53CF-B953-4CF9-8F12-3D74BB6F4F1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E03.Vererbung.Buchkonto", "..\E03.Vererbung.Buchkonto\E03.Vererbung.Buchkonto.csproj", "{B9DF53CF-B953-4CF9-8F12-3D74BB6F4F1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

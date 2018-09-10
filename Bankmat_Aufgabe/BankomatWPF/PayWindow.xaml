@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankomatWPF"
         mc:Ignorable="d"
-        Title="PayWindow" Height="450" Width="800">
+        Title="PayWindow" Height="349.2" Width="697.6" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
     <Grid>
-        
+        <TextBox HorizontalAlignment="Left" Height="29" Margin="133,58,0,0" TextWrapping="Wrap" Text="{Binding Path= Balance, Mode=OneWay}" VerticalAlignment="Top" Width="236" IsReadOnly="True"/>
+        <Label x:Name="Lbslado" Content="Saldo" HorizontalAlignment="Left" Margin="49,58,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LBbetrag" Content="Betrag eingeben" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TBbetrag" HorizontalAlignment="Left" Height="23" Margin="133,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Butconfirm" Content="Bestätigen" HorizontalAlignment="Left" Margin="293,264,0,0" VerticalAlignment="Top" Width="75" Click="Butconfirm_Click"/>
+        <Button x:Name="Butcancel" Content="Abbrechen" HorizontalAlignment="Left" Margin="408,264,0,0" VerticalAlignment="Top" Width="75"/>
+
     </Grid>
 </Window>

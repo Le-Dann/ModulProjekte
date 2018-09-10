@@ -104,5 +104,75 @@ namespace BankomatWPF
                 DataContext = this;
             }
         }
+
+        private void Buteinzahlen_Click(object sender, RoutedEventArgs e)
+        {
+            int indexval = Gridbank.SelectedIndex;
+            sparkonto = Gridbank.SelectedItem as Sparkonto;
+            girokonto = Gridbank.SelectedItem as Girokonto;
+            PayWindow p = new PayWindow(sparkonto,1);
+            p.Owner = this;
+            if (sparkonto != null)
+            {
+                p.ShowDialog();
+            }
+            else if (girokonto != null)
+            {
+                p = new PayWindow(girokonto,1);
+                p.ShowDialog();
+            }
+            if (p.DialogResult == true)
+            {
+                if (p.skonto != null)
+                {
+                    kontos.Remove(sparkonto);
+                    sparkonto = p.skonto;
+                    Kontos.Insert(indexval, sparkonto);
+                }
+                else if (p.gkonto != null)
+                {
+                    kontos.Remove(girokonto);
+                    girokonto = p.gkonto;
+                    Kontos.Insert(indexval, girokonto);
+                }
+                DataContext = null;
+                DataContext = this;
+            }
+        }
+
+        private void Butauzahlen_Click(object sender, RoutedEventArgs e)
+        {
+            int indexval = Gridbank.SelectedIndex;
+            sparkonto = Gridbank.SelectedItem as Sparkonto;
+            girokonto = Gridbank.SelectedItem as Girokonto;
+            PayWindow p = new PayWindow(sparkonto, -1);
+            p.Owner = this;
+            if (sparkonto != null)
+            {
+                p.ShowDialog();
+            }
+            else if (girokonto != null)
+            {
+                p = new PayWindow(girokonto, -1);
+                p.ShowDialog();
+            }
+            if (p.DialogResult == true)
+            {
+                if (p.skonto != null)
+                {
+                    kontos.Remove(sparkonto);
+                    sparkonto = p.skonto;
+                    Kontos.Insert(indexval, sparkonto);
+                }
+                else if (p.gkonto != null)
+                {
+                    kontos.Remove(girokonto);
+                    girokonto = p.gkonto;
+                    Kontos.Insert(indexval, girokonto);
+                }
+                DataContext = null;
+                DataContext = this;
+            }
+        }
     }
 }

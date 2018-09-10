@@ -23,7 +23,10 @@
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Bottom">
             <Button x:Name="ButAdd" Content="Neue Konto eröffnen" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Click="ButAdd_Click" Width="168" Height="20"/>
             <Button x:Name="Butchange" Content="Konto Information bearbeiten" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Width="168" Height="20" Click="Butchange_Click"/>
+            <Button x:Name="Buteinzahlen" Content="Einzahlen" Grid.Column="1" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Width="168" Click="Buteinzahlen_Click"/>
+            <Button x:Name="Butauzahlen" Content="Auszahlen" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Width="168" Click="Butauzahlen_Click"/>
 
         </StackPanel>
+
     </Grid>
 </Window>
