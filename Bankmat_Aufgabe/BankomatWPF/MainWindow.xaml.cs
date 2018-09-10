@@ -174,5 +174,14 @@ namespace BankomatWPF
                 DataContext = this;
             }
         }
+
+        private void Butlist_Click(object sender, RoutedEventArgs e)
+        {
+            Konto konto = Gridbank.SelectedItem as Konto;
+            ListWindow lw = new ListWindow(konto);
+            lw.Owner = this;
+
+            lw.ShowDialog();
+        }
     }
 }

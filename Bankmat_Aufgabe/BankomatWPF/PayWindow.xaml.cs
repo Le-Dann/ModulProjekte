@@ -47,42 +47,11 @@ namespace BankomatWPF
 
         private void Butconfirm_Click(object sender, RoutedEventArgs e)
         {
-            
+            double amount = 0.0;
             try
             {
-                double amount = Convert.ToDouble(TBbetrag.Text);
-                if (Transtyp == 1)
-                {
-                    if (mainkonto is Girokonto)
-                    {
-                        gkonto = mainkonto as Girokonto;
-                        gkonto.PayIn(amount);
-                        kontotyp = 1;
-                    }
-                    else
-                    {
-                        skonto = mainkonto as Sparkonto;
-                        skonto.PayIn(amount);
-                        kontotyp = -1;
-                    }
-                }
-                if (Transtyp == -1)
-                {
-                    if (mainkonto is Girokonto)
-                    {
-                        gkonto = mainkonto as Girokonto;
-                        gkonto.PayOut(amount);
-                        kontotyp = 1;
-                    }
-                    else
-                    {
-                        skonto = mainkonto as Sparkonto;
-                        skonto.PayOut(amount);
-                        kontotyp = -1;
-                    }
-                }
-                DialogResult = true;
-                this.Close();
+                amount = Convert.ToDouble(TBbetrag.Text);
+                
             }
             catch (FormatException)
             {
@@ -93,7 +62,40 @@ namespace BankomatWPF
             {
                 MessageBox.Show(ex.Message);
             }
-           
+
+            if (Transtyp == 1)
+            {
+                if (mainkonto is Girokonto)
+                {
+                    gkonto = mainkonto as Girokonto;
+                    gkonto.PayIn(amount);
+                    kontotyp = 1;
+                }
+                else
+                {
+                    skonto = mainkonto as Sparkonto;
+                    skonto.PayIn(amount);
+                    kontotyp = -1;
+                }
+            }
+            if (Transtyp == -1)
+            {
+                if (mainkonto is Girokonto)
+                {
+                    gkonto = mainkonto as Girokonto;
+                    gkonto.PayOut(amount);
+                    kontotyp = 1;
+                }
+                else
+                {
+                    skonto = mainkonto as Sparkonto;
+                    skonto.PayOut(amount);
+                    kontotyp = -1;
+                }
+            }
+            DialogResult = true;
+            this.Close();
+
         }
 
         private void Butcancel_Click(object sender, RoutedEventArgs e)

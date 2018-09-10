@@ -90,7 +90,7 @@ namespace E03.Vererbung.Buchkonto
             set { _dispValue = value; }
         }
 
-        private List<Transaktion> transaktionen;
+        private List<Transaktion> transaktionen = new List<Transaktion>();
 
         public List<Transaktion> Transaktionen
         {
@@ -138,6 +138,7 @@ namespace E03.Vererbung.Buchkonto
             Number = number;
             Name = name;
             Limit = limit;
+            _createdDate = DateTime.Now;
         }
 
         /// <summary>
@@ -150,6 +151,8 @@ namespace E03.Vererbung.Buchkonto
             {
                 Console.WriteLine($"Balance was {Balance}. Current balance {_balance += amount} ");
                 _changedDate = DateTime.Now;
+                Transaktion transaktion = new Transaktion(_changedDate,amount,_balance,"Einzahlung");
+                Transaktionen.Add(transaktion);
             }
             else
             {
@@ -167,6 +170,8 @@ namespace E03.Vererbung.Buchkonto
             _balance -= amount;
             _changedDate = DateTime.Now;
             Console.WriteLine($"The amount {amount} has been withdrawn from your account. Current balance: {Balance}");
+            Transaktion transaktion = new Transaktion(_changedDate, amount, _balance, "Auszahlung");
+            Transaktionen.Add(transaktion);
         }
 
 
