@@ -123,13 +123,13 @@ namespace BankomatWPF
             }
             if (p.DialogResult == true)
             {
-                if (p.skonto != null)
+                if (p.kontotyp == -1)
                 {
                     kontos.Remove(sparkonto);
                     sparkonto = p.skonto;
                     Kontos.Insert(indexval, sparkonto);
                 }
-                else if (p.gkonto != null)
+                else if (p.kontotyp == 1)
                 {
                     kontos.Remove(girokonto);
                     girokonto = p.gkonto;
@@ -158,13 +158,13 @@ namespace BankomatWPF
             }
             if (p.DialogResult == true)
             {
-                if (p.skonto != null)
+                if (p.kontotyp == -1)
                 {
                     kontos.Remove(sparkonto);
                     sparkonto = p.skonto;
                     Kontos.Insert(indexval, sparkonto);
                 }
-                else if (p.gkonto != null)
+                else if (p.kontotyp == 1)
                 {
                     kontos.Remove(girokonto);
                     girokonto = p.gkonto;
