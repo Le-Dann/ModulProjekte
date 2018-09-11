@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 
 namespace E03.Vererbung.Buchkonto
@@ -12,18 +13,27 @@ namespace E03.Vererbung.Buchkonto
         /// <summary>
         /// Date of transaction
         /// </summary>
+
+        [DisplayName("Datum")]
         public DateTime Transdate { get; set; }
 
         /// <summary>
         /// Amount of money transacted
         /// </summary>
+
+        [DisplayName("Betrag")]
         public double Amount { get; set; }
 
-        /// <summary>
+        /// <summary>     
         /// Current balance of account after transaction
         /// </summary>
+        [DisplayName("Saldo")]
         public double Currbalance { get; set; }
 
+        /// <summary>
+        /// String showing type of transaction made
+        /// </summary>
+        [DisplayName("Buchungstyp")]
         public string Transtyp { get; set; }
 
 
