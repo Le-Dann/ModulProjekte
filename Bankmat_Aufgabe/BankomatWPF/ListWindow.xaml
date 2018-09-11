@@ -5,22 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankomatWPF"
         mc:Ignorable="d"
-        Title="ListWindow" Height="450" Width="800" WindowStartupLocation="CenterOwner">
+        Title="ListWindow" Height="450" Width="800" WindowStartupLocation="CenterOwner" >
     <Grid>
-        <DataGrid x:Name="Gridtranslist" ItemsSource="{Binding Path= lkonto.Transaktionen}" HorizontalAlignment="Left" Height="340" Margin="27,70,0,0" VerticalAlignment="Top" Width="757">
+        <DataGrid x:Name="Gridtranslist" ItemsSource="{Binding Path= Transaktionen}" AutoGenerateColumns="False" CanUserAddRows="False" HorizontalAlignment="Left" Height="352" Margin="10,58,0,0" VerticalAlignment="Top" Width="774">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path= Transdate}" ClipboardContentBinding="{x:Null}" Foreground="{x:Null}" Header="Datum" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Path = Transdate}" ClipboardContentBinding="{x:Null}" Foreground="{x:Null}" Header="Datum" Width="150"/>
                 <DataGridTextColumn Binding="{Binding Path= Transtyp}" ClipboardContentBinding="{x:Null}" Foreground="{x:Null}" Header="Buchungstyp" Width="150"/>
                 <DataGridTextColumn Binding="{Binding Path= Amount}" ClipboardContentBinding="{x:Null}" Foreground="{x:Null}" Header="Betrag" Width="150"/>
                 <DataGridTextColumn Binding="{Binding Path= Currbalance}" ClipboardContentBinding="{x:Null}" Foreground="{x:Null}" Header="Saldo" Width="150*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="Lbkontonr" Content="KontoNr." HorizontalAlignment="Left" Margin="49,25,0,0" VerticalAlignment="Top" Width="79" Height="25"/>
-        <Label x:Name="Lbkontonrcontent" Content="{Binding Path= lkonto.Number}" HorizontalAlignment="Left" Margin="149,25,0,0" VerticalAlignment="Top" Width="79" Height="25"/>
+        <Label x:Name="Lbkontonrcontent" Content="{Binding Path= Number}" HorizontalAlignment="Left" Margin="149,25,0,0" VerticalAlignment="Top" Width="79" Height="25"/>
         <Label x:Name="LbName" Content="Name" HorizontalAlignment="Left" Margin="259,25,0,0" VerticalAlignment="Top" Width="79" Height="25"/>
-        <Label x:Name="LbNamecontent" Content="{Binding Path= lkonto.Name}" HorizontalAlignment="Left" Margin="342,26,0,0" VerticalAlignment="Top" Width="79" Height="25" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="LbNamecontent" Content="{Binding Path= Name}" HorizontalAlignment="Left" Margin="342,26,0,0" VerticalAlignment="Top" Width="79" Height="25" RenderTransformOrigin="0.5,0.5"/>
         <Label x:Name="LbCreationdate" Content="Datum des Kontoeröffenungs" HorizontalAlignment="Left" Margin="437,25,0,0" VerticalAlignment="Top" Width="170" Height="33"/>
-        <Label x:Name="LbCreationdatecontent" Content="{Binding Path= lkonto.CreatedDate}" HorizontalAlignment="Left" Margin="625,25,0,0" VerticalAlignment="Top" Width="117" Height="33"/>
+        <Label x:Name="LbCreationdatecontent" Content="{Binding Path= CreatedDate}" HorizontalAlignment="Left" Margin="625,25,0,0" VerticalAlignment="Top" Width="117" Height="33"/>
 
     </Grid>
 </Window>

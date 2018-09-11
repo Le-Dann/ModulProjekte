@@ -20,8 +20,16 @@ namespace BankomatWPF
     /// </summary>
     public partial class ListWindow : Window
     {
-        List<Transaktion> Translist = new List<Transaktion>();
-        Konto lkonto;
+       public Konto lkonto;
+
+        private List<Transaktion> transaktions = new List<Transaktion>();
+
+        public List<Transaktion> Translist
+        {
+            get {return transaktions;}
+            set {transaktions = value;}
+        }
+
         public ListWindow()
         {
             InitializeComponent();
@@ -29,11 +37,8 @@ namespace BankomatWPF
 
         public ListWindow(Konto konto) : this()
         {
-            Translist = konto.Transaktionen;
             lkonto = konto;
             DataContext = lkonto;
         }
-
-
     }
 }

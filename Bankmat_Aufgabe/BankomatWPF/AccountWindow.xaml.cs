@@ -25,13 +25,13 @@ namespace BankomatWPF
         /// </summary>
         /// <remarks>Default value 0. Sparkonto -1. Girokonto 1</remarks>
         public int kontotyp = 0;
-
+ 
         public Sparkonto sparkonto = new Sparkonto();
         public Girokonto girokonto = new Girokonto();
         public AccountWindow()
         {
             InitializeComponent();
-            DataContext = sparkonto; //set text fields with default values when window is first opened
+            DataContext = sparkonto; //set text fields with default values when window is opened to create a new account
         }
 
         public AccountWindow(Konto konto) : this ()
@@ -62,10 +62,7 @@ namespace BankomatWPF
                     {
                         sparkonto.Name = tbName.Text;
                         sparkonto.Number = Convert.ToInt32(tbAccountno.Text);
-                        if (String.IsNullOrEmpty(tblimit.Text))
-                        {
-                            tblimit.Text = Convert.ToString(sparkonto.Limit);
-                        }
+                  
                         sparkonto.Limit = Convert.ToDouble(tblimit.Text);
                         kontotyp = -1;
                     }
@@ -73,10 +70,7 @@ namespace BankomatWPF
                     {
                         girokonto.Name = tbName.Text;
                         girokonto.Number = Convert.ToInt32(tbAccountno.Text);
-                        if (String.IsNullOrEmpty(tblimit.Text))
-                        {
-                            tblimit.Text = Convert.ToString(girokonto.Limit);
-                        }
+                        
                         girokonto.Limit = Convert.ToDouble(tblimit.Text);
                         kontotyp = 1;
                     }
