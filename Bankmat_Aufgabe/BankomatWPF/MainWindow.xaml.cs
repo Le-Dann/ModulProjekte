@@ -123,13 +123,13 @@ namespace BankomatWPF
             }
             if (p.DialogResult == true)
             {
-                if (p.skonto != null)
+                if (p.kontotyp == -1)
                 {
                     kontos.Remove(sparkonto);
                     sparkonto = p.skonto;
                     Kontos.Insert(indexval, sparkonto);
                 }
-                else if (p.gkonto != null)
+                else if (p.kontotyp == 1)
                 {
                     kontos.Remove(girokonto);
                     girokonto = p.gkonto;
@@ -158,13 +158,13 @@ namespace BankomatWPF
             }
             if (p.DialogResult == true)
             {
-                if (p.skonto != null)
+                if (p.kontotyp == -1)
                 {
                     kontos.Remove(sparkonto);
                     sparkonto = p.skonto;
                     Kontos.Insert(indexval, sparkonto);
                 }
-                else if (p.gkonto != null)
+                else if (p.kontotyp == 1)
                 {
                     kontos.Remove(girokonto);
                     girokonto = p.gkonto;
@@ -173,6 +173,15 @@ namespace BankomatWPF
                 DataContext = null;
                 DataContext = this;
             }
+        }
+
+        private void Butlist_Click(object sender, RoutedEventArgs e)
+        {
+            Konto konto = Gridbank.SelectedItem as Konto;
+            ListWindow lw = new ListWindow(konto);
+            lw.Owner = this;
+
+            lw.ShowDialog();
         }
     }
 }

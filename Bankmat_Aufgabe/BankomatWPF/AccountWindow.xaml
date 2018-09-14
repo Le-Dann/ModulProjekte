@@ -16,7 +16,7 @@
         <TextBox x:Name="tbName"  HorizontalAlignment="Left" Height="21" Margin="23,179,0,0" TextWrapping="Wrap" Text="{Binding Path= Name}" VerticalAlignment="Top" Width="417"/>
         <TextBox x:Name="tblimit"  HorizontalAlignment="Left" Height="21" Margin="23,237,0,0" TextWrapping="Wrap" Text="{Binding Path= Limit}" VerticalAlignment="Top" Width="417"/>
         <Label x:Name="lbnote" Content="* Erfolderliche Felder" HorizontalAlignment="Left" Margin="23,281,0,0" VerticalAlignment="Top" Width="153" Height="25"/>
-        <Label x:Name="lbkontotyp" Content="*Kontotyp" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top" Height="24" Width="166"/>
+        <Label x:Name="lbkontotyp" Content="*Kontotyp" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top" Height="29" Width="166"/>
         <ComboBox x:Name="cmbokontotyp" HorizontalAlignment="Left" Margin="23,39,0,0" VerticalAlignment="Top" Width="411">
             <Button Content="Sparkonto"/>
             <Button Content="Girokonto"/>
