@@ -40,10 +40,12 @@ namespace BankomatWPF
             if (konto is Sparkonto)
             {
                 cmbokontotyp.Text = "Sparkonto";
+                sparkonto = konto as Sparkonto;
             }
             if (konto is Girokonto)
             {
                 cmbokontotyp.Text = "Girokonto";
+                girokonto = konto as Girokonto;
             }
         }
 

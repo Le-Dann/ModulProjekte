@@ -63,34 +63,69 @@ namespace BankomatWPF
                 MessageBox.Show(ex.Message);
             }
 
-            if (Transtyp == 1)
+
+            if (Transtyp == 1 && amount != 0.0)
             {
                 if (mainkonto is Girokonto)
                 {
                     gkonto = mainkonto as Girokonto;
-                    gkonto.PayIn(amount);
-                    kontotyp = 1;
+                    try
+                    {
+                        gkonto.PayIn(amount);
+                        kontotyp = 1;
+                    }
+                    catch (KtoException ex)
+                    {
+
+                        MessageBox.Show(ex.Message);
+                    } 
                 }
                 else
                 {
                     skonto = mainkonto as Sparkonto;
-                    skonto.PayIn(amount);
-                    kontotyp = -1;
+                    try
+                    {
+                        skonto.PayIn(amount);
+                        kontotyp = -1;
+                    }
+                    catch (KtoException ex)
+                    {
+
+                       MessageBox.Show(ex.Message);
+                    }
+                 
                 }
             }
-            if (Transtyp == -1)
+            if (Transtyp == -1 && amount != 0.0)
             {
                 if (mainkonto is Girokonto)
                 {
                     gkonto = mainkonto as Girokonto;
-                    gkonto.PayOut(amount);
-                    kontotyp = 1;
+                    try
+                    {
+                        gkonto.PayOut(amount);
+                        kontotyp = 1;
+                    }
+                    catch (KtoException ex)
+                    {
+
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 else
                 {
                     skonto = mainkonto as Sparkonto;
-                    skonto.PayOut(amount);
-                    kontotyp = -1;
+                    try
+                    {
+                        skonto.PayOut(amount);
+                        kontotyp = -1;
+                    }
+                    catch (KtoException ex)
+                    {
+
+                        MessageBox.Show(ex.Message);
+                    }
+                    
                 }
             }
             DialogResult = true;
