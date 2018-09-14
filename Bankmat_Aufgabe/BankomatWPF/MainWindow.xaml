@@ -11,7 +11,7 @@
             <ColumnDefinition Width="298*"/>
             <ColumnDefinition Width="99*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid HorizontalAlignment="Left" ItemsSource="{Binding Path= Kontos}" AutoGenerateColumns="False" CanUserAddRows="False" Name="Gridbank" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top">
+        <DataGrid HorizontalAlignment="Left" ItemsSource="{Binding Path= Kontos}" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" Name="Gridbank" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path= Number}" ClipboardContentBinding="{x:Null}" Header="Account no." Width="160"/>
                 <DataGridTextColumn  Binding="{Binding Path= Name}" ClipboardContentBinding="{x:Null}" Header="Name" Width="160"/>
