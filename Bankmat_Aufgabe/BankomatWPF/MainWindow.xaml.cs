@@ -21,17 +21,20 @@ namespace BankomatWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+
         /// <summary>
         /// List of accounts to be stored in data grid
         /// </summary>
-        private List<Konto> kontos = new List<Konto>();
+        Bank b = new Bank("Bank of America", "Canada");
+        
+
         Sparkonto sparkonto = new Sparkonto();
         Girokonto girokonto = new Girokonto();
 
         public List<Konto>  Kontos
         {
-            get { return kontos; }
-            set { kontos = value; }
+            get { return b.Kontos; }
+            set { b.Kontos = value; }
         }
 
         public MainWindow()
@@ -90,13 +93,13 @@ namespace BankomatWPF
             {
                 if (w.kontotyp == -1)
                 {
-                    kontos.Remove(sparkonto);
+                    Kontos.Remove(sparkonto);
                     sparkonto = w.sparkonto;
                     Kontos.Insert(indexval,sparkonto);
                 }
                 else if (w.kontotyp == 1)
                 {
-                    kontos.Remove(girokonto);
+                    Kontos.Remove(girokonto);
                     girokonto = w.girokonto;
                     Kontos.Insert(indexval,girokonto);
                 }
@@ -125,13 +128,13 @@ namespace BankomatWPF
             {
                 if (p.kontotyp == -1)
                 {
-                    kontos.Remove(sparkonto);
+                    Kontos.Remove(sparkonto);
                     sparkonto = p.skonto;
                     Kontos.Insert(indexval, sparkonto);
                 }
                 else if (p.kontotyp == 1)
                 {
-                    kontos.Remove(girokonto);
+                    Kontos.Remove(girokonto);
                     girokonto = p.gkonto;
                     Kontos.Insert(indexval, girokonto);
                 }
@@ -160,13 +163,13 @@ namespace BankomatWPF
             {
                 if (p.kontotyp == -1)
                 {
-                    kontos.Remove(sparkonto);
+                    Kontos.Remove(sparkonto);
                     sparkonto = p.skonto;
                     Kontos.Insert(indexval, sparkonto);
                 }
                 else if (p.kontotyp == 1)
                 {
-                    kontos.Remove(girokonto);
+                    Kontos.Remove(girokonto);
                     girokonto = p.gkonto;
                     Kontos.Insert(indexval, girokonto);
                 }

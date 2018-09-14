@@ -21,7 +21,7 @@ namespace E03.Vererbung.Buchkonto
         /// <summary>
         /// List of accounts at the bank
         /// </summary>
-        private List<Konto> kontos;
+        private List<Konto> kontos = new List<Konto>();
 
         public List<Konto> Kontos
         {
