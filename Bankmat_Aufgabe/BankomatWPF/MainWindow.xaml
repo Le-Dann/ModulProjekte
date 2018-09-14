@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BankomatWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Margin="0,0,3.6,2">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="298*"/>
             <ColumnDefinition Width="99*"/>
@@ -21,11 +21,11 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Bottom">
-            <Button x:Name="ButAdd" Content="Neue Konto eröffnen" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Click="ButAdd_Click" Width="168" Height="20"/>
-            <Button x:Name="Butchange" Content="Konto Information bearbeiten" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Width="168" Height="20" Click="Butchange_Click"/>
-            <Button x:Name="Buteinzahlen" Content="Einzahlen" Grid.Column="1" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Width="168" Click="Buteinzahlen_Click"/>
-            <Button x:Name="Butauzahlen" Content="Auszahlen" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Width="168" Click="Butauzahlen_Click"/>
-
+            <Button x:Name="ButAdd" Content="Neue Konto eröffnen" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Click="ButAdd_Click" Width="168" Height="23"/>
+            <Button x:Name="Butchange" Content="Konto Information bearbeiten" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Width="168" Height="23" Click="Butchange_Click"/>
+            <Button x:Name="Buteinzahlen" Content="Einzahlen" Grid.Column="1" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Height="23"  Width="168" Click="Buteinzahlen_Click"/>
+            <Button x:Name="Butauzahlen" Content="Auszahlen" HorizontalAlignment="Left" Margin="5,5,0,5" VerticalAlignment="Top" Height="23"  Width="168" Click="Butauzahlen_Click"/>
+            <Button x:Name="Butlist" Margin="5,5,0,5" Content="Konto Transaktionen" Height="23" Width="168" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Butlist_Click"/>
         </StackPanel>
 
     </Grid>

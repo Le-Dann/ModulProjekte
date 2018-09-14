@@ -26,60 +26,32 @@ namespace BankomatWPF
         /// <remarks>-1 for auszahlen. 1 for einzahlen</remarks>
         int Transtyp = 0;
 
-        public Sparkonto skonto = new Sparkonto();
+        public int kontotyp = 0;
+
+        Konto mainkonto;
         public Girokonto gkonto = new Girokonto();
+        public Sparkonto skonto = new Sparkonto();
+    
         public PayWindow()
         {
             InitializeComponent();
         }
-        public PayWindow(Sparkonto sparkonto, int transtyp) : this()
+        public PayWindow(Konto konto, int transtyp) : this()
         {
           Transtyp = transtyp; //distinguishes between einzahlen and auszahlen. 
-          DataContext = sparkonto;
-          skonto = sparkonto;
+          DataContext = konto;
+          mainkonto = konto;
           
         }
 
-        public PayWindow(Girokonto girokonto, int transtyp) : this()
-        {
-            Transtyp = transtyp; //distinguishes between einzahlen and auszahlen. 
-            DataContext = girokonto;
-            gkonto = girokonto;
-
-        }
 
         private void Butconfirm_Click(object sender, RoutedEventArgs e)
         {
-            
+            double amount = 0.0;
             try
             {
-                double amount = Convert.ToDouble(TBbetrag.Text);
-                if (Transtyp == 1)
-                {
-                    if (gkonto != null)
-                    {
-
-                        gkonto.PayIn(amount);
-                    }
-                    else
-                    {
-                        skonto.PayIn(amount);
-                    }
-                }
-                if (Transtyp == -1)
-                {
-                    if (gkonto != null)
-                    {
-
-                        gkonto.PayOut(amount);
-                    }
-                    else
-                    {
-                        skonto.PayOut(amount);
-                    }
-                }
-                DialogResult = true;
-                this.Close();
+                amount = Convert.ToDouble(TBbetrag.Text);
+                
             }
             catch (FormatException)
             {
@@ -90,7 +62,46 @@ namespace BankomatWPF
             {
                 MessageBox.Show(ex.Message);
             }
-           
+
+            if (Transtyp == 1)
+            {
+                if (mainkonto is Girokonto)
+                {
+                    gkonto = mainkonto as Girokonto;
+                    gkonto.PayIn(amount);
+                    kontotyp = 1;
+                }
+                else
+                {
+                    skonto = mainkonto as Sparkonto;
+                    skonto.PayIn(amount);
+                    kontotyp = -1;
+                }
+            }
+            if (Transtyp == -1)
+            {
+                if (mainkonto is Girokonto)
+                {
+                    gkonto = mainkonto as Girokonto;
+                    gkonto.PayOut(amount);
+                    kontotyp = 1;
+                }
+                else
+                {
+                    skonto = mainkonto as Sparkonto;
+                    skonto.PayOut(amount);
+                    kontotyp = -1;
+                }
+            }
+            DialogResult = true;
+            this.Close();
+
+        }
+
+        private void Butcancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            this.Close();
         }
     }
 }
